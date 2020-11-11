@@ -67,8 +67,8 @@ function setup() {
   
   console.log("Hello" + 5);
   
-  //trex.setCollider("circle", 0, 0, 40);
-  trex.setCollider("rectangle",0,0,300, trex.height);
+  trex.setCollider("circle", 0, 0, 40);
+  //trex.setCollider("rectangle",0,0,300, trex.height);
   //trex.debug = true;
   
   score = 0;
@@ -112,10 +112,10 @@ function draw() {
     spawnObstacles();
     
     if(obstaclesGroup.isTouching(trex)){
-      trex.velocityY = -12;
-      jumpSound.play();
-      //gameState = END;
-      //dieSound.play();
+      //trex.velocityY = -12;
+      //jumpSound.play();
+      gameState = END;
+      dieSound.play();
     }
     if (score%1000 === 0 && score > 0) {
       checkPointSound.play();
